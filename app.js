@@ -77,30 +77,76 @@ document.write(power(5,2), "<br>")
 // document.write("sentence without vowels is: ", deleteVowels(user))
 
 // q7
-function twoVowelsCount(text){
-    var count = 0
-    for(var i=0; i<text.length -1 ; i++){
-        var first = text[i]
-        var second = text[i+1]
-        switch (first)  {
-            case "a" :
-            case "e" :
-            case "i" :
-            case "o" :
-            case "u" :
-                switch (second) {
-                    case "a" :
-                    case "e" :
-                    case "i" :
-                    case "o" :
-                    case "u" :
-                        count ++
-                        break;
-                }
-        }
+// function twoVowelsCount(text){
+//     var count = 0
+//     for(var i=0; i<text.length -1 ; i++){
+//         var first = text[i]
+//         var second = text[i+1]
+//         switch (first)  {
+//             case "a" :
+//             case "e" :
+//             case "i" :
+//             case "o" :
+//             case "u" :
+//                 switch (second) {
+//                     case "a" :
+//                     case "e" :
+//                     case "i" :
+//                     case "o" :
+//                     case "u" :
+//                         count ++
+//                         break;
+//                 }
+//         }
+//     }
+//     return count;
+// }
+// var sentence = "please read this application and give me gratuity"
+// document.write("occurences of two vowels in succcession are ",twoVowelsCount(sentence), " times")
+
+// q8
+// function meter (km){
+//     return km*1000 + " " + "meters"
+// }
+// function feet (km){
+//     return km*3281 + " " + "feet"
+// }
+// function inches (km){
+//     return km*39370 + " " + "inches"
+// }
+// function cm (km){
+//     return km*100000 + " " + "centimeters."
+// }
+// var user = prompt("enter the distance between two cities in km")
+// document.write("The distance between two cities is " + meter(user) + ", " + feet(user) + ", "+ inches(user) + " and "+ cm(user));
+
+// q9
+// function calcOTP (totalHrsWorked){
+//     var regHrs = 40
+//     var OTPperHr = 12
+//     totalHrsWorked = Math.floor(totalHrsWorked)
+//     if(totalHrsWorked > regHrs){
+//         var OThours = totalHrsWorked-regHrs
+//         return OThours*OTPperHr
+//     }
+//     else{
+//         return 0
+//     }
+// }
+// var employeesHrs = prompt("Enter the hours you have worked for")
+// document.write(`Your overtime pay is Rs. ${calcOTP(employeesHrs)}/-`)
+
+// q10
+function totalNotes(amount){
+    if (!isNaN(amount) && amount <=999 && amount >=100){
+        var hundreds = Math.floor(amount/100)
+        amount = amount%100
+        var fifty = Math.floor(amount/50)
+        amount %= 50
+        var ten = Math.floor(amount/10)
+        document.write(`you will have ${hundreds} notes of hundred and ${fifty} notes of fifty and ${ten} notes of ten`)
     }
-    return count;
 
 }
-var sentence = "please read this application and give me gratuity"
-document.write("occurences of two vowels in succcession are ",twoVowelsCount(sentence), " times")
+var user = +prompt("Enter the amount to be withdrawn")
+totalNotes(user)
